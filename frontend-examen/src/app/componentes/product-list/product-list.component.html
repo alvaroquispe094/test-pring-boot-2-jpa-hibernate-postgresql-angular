@@ -1,0 +1,26 @@
+<div class="container mt-3">
+ <h2>Listado de productos</h2>
+ <hr>
+ <div class="row mt-2">   
+  <div class="col-md-4 mt-4" *ngFor="let producto of productos">
+    <div class="card text-center">
+      <!-- <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        {{producto.nombre}}
+      </div> -->
+      <img class="card-img-top" [src]="producto.imagen == '' ? '/assets/noimage.png' : producto.imagen">
+      <div class="card-body">
+
+        <span>{{producto.nombre}}</span>
+        <p class="text-center"><strong><span>${{producto.precio}}</span></strong></p>    
+        <!-- <p>{{producto.descripcion}}</p> -->
+        <!-- <a [routerLink]="['/productos', producto.id]" class="btn btn-info btn-block" (click)="agregarAlCarrito(producto.id)">
+            <i class="fas fa-shopping-cart"></i>Agregar
+        </a> -->
+        <button class="btn btn-info btn-block" (click)="agregarAlCarrito(producto.id)">
+            <i class="fas fa-shopping-cart"></i>Agregar
+        </button>
+      </div>
+    </div>
+  </div>
+ </div> 
+</div>  

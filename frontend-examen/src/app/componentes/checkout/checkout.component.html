@@ -1,0 +1,138 @@
+<div id="container" class="container page">
+
+
+    <!-- seccion de mis productos -->
+    <section>
+
+        <div class="row" style="padding-top: 30px;">
+            <!-- productos adquiridos -->
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header bg-secondary">
+                        <div class="panel-title">
+                            <div class="row">
+                                <div class="col-lg-6 my-auto">
+                                    <h5>
+                                        <i class="fas fa-shopping-bag"></i>&nbsp; Mis productos
+                                    </h5>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div *ngFor="let item of carrito">
+                            <div class="row">
+                                <div class="col-lg-1">
+                                    <img class="card-img-top" [src]="item.imagen == '' ? '/assets/noimage.png' : item.imagen">
+                                </div>
+                                <div class="col-lg-7">
+                                    <h4 class="product-name">
+                                        <strong><span>{{item.nombre}}</span></strong>
+                                    </h4>
+                                    <h4></h4>
+                                </div>
+                                <div class="col-lg-4 my-auto">
+                                    <div class="row">
+
+                                        <div class="col-lg-2">
+                                            <div class="btn-group input-group" role="group"
+                                                aria-label="Basic example">
+
+                                                <h6 class="text-right">
+                                                    X <strong><span> {{item.cantidad}}</span></strong>
+                                                </h6>
+                                                <!-- <a href="#" role="button"
+                                                    class="btn btn-light btn-sm disabled" id="label-btn"
+                                                    aria-disabled="true"><strong><span>X {{item.cantidad}}</span></strong></a> -->
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-6 text-right">
+                                            <h5>
+                                                <strong><span class="text-muted">$ </span><span>{{item.precio}}</span></strong>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h4 class="text-left">
+                                    Total <strong><span class="text-muted">$ </span><span>{{shoppingCart.total}}</span></strong>
+                                </h4>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row" >
+                            <div class="col-lg-12">
+                                <h4 class="text-left">
+                                    Descuento por 4 productos <strong><span class="text-muted">- $ </span>
+                                        <span *ngIf="shoppingCart.esDescuento4">{{shoppingCart.descuento25}}</span>
+                                        <span *ngIf="!shoppingCart.esDescuento4">0</span>
+                                                              </strong>
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="row" >
+                            <div class="col-lg-12">
+                                <h4 class="text-left">
+                                    Descuento por 10 productos comun <strong><span class="text-muted">- $ </span><span *ngIf="shoppingCart.esDescuentoComun10">100</span>
+                                        <span *ngIf="!shoppingCart.esDescuentoComun10">0</span></strong>
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="row" >
+                            <div class="col-lg-12">
+                                <h4 class="text-left">
+                                    Descuento por 10 productos especial <strong><span class="text-muted">- $ </span><span *ngIf="shoppingCart.esDescuentoEspecial10">300</span>
+                                        <span *ngIf="!shoppingCart.esDescuentoEspecial10">0</span></strong>
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div class="row" esDescuentoVip10>
+                            <div class="col-lg-12">
+                                <h4 class="text-left">
+                                    Descuento por 10 productos Vip <strong><span class="text-muted">- $ </span><span *ngIf="shoppingCart.esDescuentoVip10">500</span>
+                                        <span *ngIf="!shoppingCart.esDescuentoVip10">0</span></strong>
+                                </h4>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h4 class="text-lef">
+                                    Total con descuento <strong><span class="text-muted">$ </span><span>{{shoppingCart.totalConDescuento}}</span></strong>
+                                </h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mt-4">
+                
+            <div class="col-lg-12 mx-auto">
+                <a class="btn btn-success btn-lg btn-block" (click)="finalizarCompra()" >Confirmar</a>
+            
+            </div>
+        </div>
+
+
+    </section>
+
+</div>
