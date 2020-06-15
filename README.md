@@ -7,8 +7,7 @@ Este proyecto esta basado en [Spring Boot](http://projects.spring.io/spring-boot
 - Spring boot
 - Spring Data (Hibernate & Postgresql)
 - Bootstrap 4
-- html5 css3 javascript
-- bootstrap
+- html5 css3 javascrip
 - angular(componentes, servicio, clases, routing)
 
 ## Pasos para correr el backend
